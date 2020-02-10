@@ -3,7 +3,7 @@
 ## 商品(products)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|description|text|null: false, unique: true|
+|description|text|null: false|
 |room_id|reference|foreign_key: true, null: false|
 ### Association
 - has_one  :room
@@ -43,8 +43,8 @@
 ## 画像(images)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|url|string|null: false|
 |product_id|reference|foreign_key: true, null: false|
+|url|string|null: false|
 ### Association
 - belongs_to :product
 
@@ -66,6 +66,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+### Association
+- has_many :products, through: :product_features
 
 ## 客室(rooms)テーブル
 |Column|Type|Options|
@@ -82,12 +84,12 @@
 ## 予約(reservations)テーブル
 |Column|Type|Options|
 |------|----|-------|
+|product_id|reference|foreign_key: true, null: false|
+|user_id|reference|foreign_key: true, null: false|
 |check_in_date|date|null: false|
 |check_out_date|date|null: false|
 |check_in_plan_time|date|null: false|
 |message|text||
-|product_id|reference|foreign_key: true, null: false|
-|user_id|reference|foreign_key: true, null: false|
 ### Association
 - has_one    :product
 - belongs_to :user
