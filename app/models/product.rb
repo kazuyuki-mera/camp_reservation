@@ -1,8 +1,11 @@
 class Product < ApplicationRecord
-  has_one  :room
-  has_many :images
-  has_many :categories, through: :product_categories
-  has_many :equipments, through: :product_equipments
-  has_many :features,   through: :product_features
+  belongs_to :room
   belongs_to :reservation
+  has_many :images
+  has_many :product_categories
+  has_many :product_facilities
+  has_many :product_features
+  has_many :categories, through: :product_categories
+  has_many :facilities, through: :product_facilities
+  has_many :features,   through: :product_features
 end

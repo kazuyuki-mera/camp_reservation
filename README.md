@@ -6,12 +6,15 @@
 |description|text|null: false|
 |room_id|reference|foreign_key: true, null: false|
 ### Association
-- has_one  :room
-- has_many :images
-- has_many :categories, through: :product_categories
-- has_many :equipments, through: :product_equipments
-- has_many :features,   through: :product_features
+- belongs_to :room
 - belongs_to :reservation
+- has_many :images
+- has_many :product_categories
+- has_many :product_facilities
+- has_many :product_features
+- has_many :categories, through: :product_categories
+- has_many :facilities, through: :product_facilities
+- has_many :features,   through: :product_features
 
 ## 商品・カテゴリ(product_categories)テーブル
 |Column|Type|Options|
@@ -22,14 +25,14 @@
 - belongs_to :product
 - belongs_to :category
 
-## 商品・設備/アメニティ(product_equipments)テーブル
+## 商品・設備/アメニティ(product_facilities)テーブル
 |Column|Type|Options|
 |------|----|-------|
 |product_id|reference|foreign_key: true, null: false|
-|equipment_id|reference|foreign_key: true, null: false|
+|facility_id|reference|foreign_key: true, null: false|
 ### Association
 - belongs_to :product
-- belongs_to :equipment
+- belongs_to :facility
 
 ## 商品・部屋特徴(product_features)テーブル
 |Column|Type|Options|
@@ -51,28 +54,31 @@
 ## カテゴリ(categories)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 ### Association
+- has_many :product_categories
 - has_many :products, through: :product_categories
 
-## 設備/アメニティ(equipments)テーブル
+## 設備/アメニティ(facilities)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 ### Association
-- has_many :products, through: :product_equipments
+- has_many :product_facilities
+- has_many :products, through: :product_facilities
 
 ## 部屋特徴(featurers)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 ### Association
+- has_many :product_features
 - has_many :products, through: :product_features
 
 ## 客室(rooms)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 |workday_price|integer|null: false|
 |holiday_price|integer|null: false|
 |total_rooms|integer|null: false|
@@ -91,7 +97,7 @@
 |check_in_plan_time|date|null: false|
 |message|text||
 ### Association
-- has_one    :product
+- belongs_to :product
 - belongs_to :user
 
 ## ユーザー(users)テーブル
@@ -143,7 +149,7 @@
 ## カテゴリ(categories)
 - 名前（サイト・バンガロー・禁煙 etc）
 
-## 設備/アメニティ(equipment)
+## 設備/アメニティ(facilities)
 - 名前（電話　ドライヤー　電子レンジ　洗浄機付トイレ etc）
 
 ## 部屋特徴(featurers)
