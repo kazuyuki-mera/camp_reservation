@@ -1,0 +1,12 @@
+.footer {
+  background-color: #959d9e;
+  // clear: both;
+  margin-top: 20px;
+  padding: 20px;
+  &__inner {
+    width: 97%;
+    margin: 0 auto;
+    color: #FFF;
+    text-align: right;
+  }
+}
