@@ -1,0 +1,19 @@
+.content
+  = render 'modules/information'
+  - products.each do |product|
+    .product_id
+      商品id：
+      = product.id
+    .room_name
+      部屋名：
+      = product.room.name
+    .room_price
+      料金：
+      = product.room.workday_price
+    .product_categories
+      - product.categories.each do |category|
+        = category.name
+    = link_to "", class: '' do
+      詳細情報
+    = link_to product_path(product) do
+      予約する

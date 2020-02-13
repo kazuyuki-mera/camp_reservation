@@ -1,0 +1,20 @@
+.div
+  お問い合わせ
+.information
+  = render 'modules/information'
+.form__heading
+  お問い合わせ内容を入力してください
+.container
+  = form_with(model: @tweet, local: true) do |form|
+    .input 氏名*
+    = form.text_field :full_name, placeholder: "東京 太郎"
+    .input メールアドレス*
+    = form.text_field :email, placeholder: "メールアドレス"
+    .input 電話番号
+    = form.text_field :phone_number, placeholder: "000-1234-5678"
+    .input タイトル*
+    = form.text_field :title
+    .input お問い合わせ内容*
+    = form.text_area :detail, placeholder: "お問い合わせ内容をご入力ください", rows: "10"
+    .input
+    = form.submit "お問い合わせを送信する"

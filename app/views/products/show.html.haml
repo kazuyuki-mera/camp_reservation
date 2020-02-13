@@ -1,0 +1,23 @@
+.content
+  .product_id
+    部屋id：
+    = @product.id
+  .room_name
+    部屋名：
+    = @product.room.name
+  .product_description
+    部屋説明：
+    = @product.description
+  .product_features
+    部屋特徴：
+    - @product.features.each do |feature|
+      = feature.name
+  .product_facilities
+    設備・アメニティ：
+    - @product.facilities.each do |facility|
+      = facility.name
+  .product_categories
+    - @product.categories.each do |category|
+      = category.name
+  = link_to product_reserves_path(@product) do
+    予約する
