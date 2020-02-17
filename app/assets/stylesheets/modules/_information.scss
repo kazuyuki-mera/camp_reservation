@@ -1,0 +1,24 @@
+.information {
+  &__contents {
+    text-align: right;
+    margin: 10px 0 10px 10px;
+    float: right;
+    &__list {
+      li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 2px;
+        a {
+          display: block;
+          padding: 10px 5px;
+          background-color: #a6afb0;
+          color: #fff;
+          text-decoration: none;
+          &:hover {
+            background-color: rgba(166,175,176,0.8);
+          }
+        }
+      }
+    }
+  }
+}

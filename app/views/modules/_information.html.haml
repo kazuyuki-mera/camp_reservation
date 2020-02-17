@@ -1,6 +1,9 @@
-.about_us
-  = link_to about_products_path do
-    About Us
-.contact
-  = link_to contact_products_path do
-    お問い合わせ
+.information
+  .information__contents
+    %ul.information__contents__list
+      %li.about_us
+        = link_to about_products_path do
+          About Us
+      %li.contact
+        = link_to contact_products_path do
+          お問い合わせ
