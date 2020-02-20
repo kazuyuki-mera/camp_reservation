@@ -14,3 +14,18 @@
     }
   }
 }
+
+button.slick-arrow {
+  z-index: 100;
+  &::before {
+    font-size: 30px;
+  }
+}
+
+button.slick-prev {
+  left: 10px;
+}
+
+button.slick-next {
+  right: 20px;
+}
