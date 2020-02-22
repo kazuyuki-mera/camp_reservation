@@ -1,0 +1,60 @@
+.products-contact {
+  max-width: 1020px;
+  margin: 0 auto;
+  &__heading {
+    h3 {
+      line-height: 64px;
+      float: left;
+      font-weight: bold;
+      font-size: large;
+      color: #069;
+    }
+  }
+  &__form {
+    padding: 30px;
+    border: 2px #069 solid;
+    &__heading {
+      margin: 7px 0;
+    }
+    form {
+      .input-name {
+        font-weight: bold;
+        padding: 5px;
+        color: #666;
+        span {
+          color: red;
+          font-weight: normal;
+        }
+      }.input-btn {
+        margin: 20px 0 10px 0;
+        text-align: center;
+        input {
+          background-color: #4abaa7;
+          padding: 13px 20px;
+          border: none;
+          border-radius: 2px;
+          color: #fff;
+          cursor: pointer;
+          line-height: 1;
+          text-decoration: none;
+          width: auto;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+      input {
+        width: 70%;
+        padding: 4px;
+        margin-bottom: 4px;
+        color: #666;
+      }
+      textarea {
+        color: #666;
+        height: 10em;
+        width: 100%;
+      }
+    }
+  }
+}
+
