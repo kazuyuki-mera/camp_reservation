@@ -1,0 +1,39 @@
+.products-about {
+  max-width: 1020px;
+  margin: 0 auto;
+  &__description {
+    padding: 30px;
+    margin-bottom: 20px;
+    color: #555;
+    p {
+      margin-bottom: 10px;
+    }
+  }
+  &__info {
+    padding: 30px;
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 90%;
+    &__item {
+      p {
+        display: inline-block;
+        width: 20%;
+        font-weight: bold;
+        padding: 10px 0;
+      }
+      span {
+        line-height: 1.5;
+        width: 79%;
+        display: inline-block;
+        border-bottom: solid 1px #EEE;
+        padding: 10px 0;
+        a {
+          color: dodgerblue;
+        }
+      }
+    }
+  }
+  &__map {
+    margin-bottom: 10px;
+  }
+}
