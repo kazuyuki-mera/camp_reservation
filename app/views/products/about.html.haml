@@ -1,16 +1,24 @@
-.div
-  About Us
-.information
-  = render 'modules/information'
-.description
-  .description
-    xxxキャンプ場
-  .description
-    xxxタイプで作成しました。
-.information
-  .tel
-    03-1234-5678
-  .url
-    https://xxx.yy/
-  .address
-    東京都港区1-2-3
+.products-about
+  .products-about__heading
+    = render 'modules/information'
+  .products-about__description
+    %p
+      xxxキャンプ場
+    %p
+      xxxタイプで作成しました。
+  .products-about__info
+    .products-about__info__item
+      %p
+        お問い合わせ電話番号
+      %span 03-1234-5678
+    .products-about__info__item
+      %p
+        URL
+      %span
+        = link_to root_path do
+          https://camp_reservation
+    .products-about__info__item
+      %p
+        所在地
+      %span 東京都千代田区1-2-3
+  .products-about__map
